@@ -1,0 +1,116 @@
+{
+  "about" : "A live stream that is still running.",
+  "captured" : "2026-10-06",
+  "errors" : "",
+  "exitStatus" : 0,
+  "expect" : {
+    "failure" : "live",
+    "kind" : "failure",
+    "message" : "This is a live stream that is still running. HeatBox downloads finished videos, so try again once the stream has ended."
+  },
+  "link" : "https://www.youtube.com/watch?v=M3HKLzjvKPc",
+  "output" : {
+    "_type" : "video",
+    "channel" : "NASA",
+    "chapters" : null,
+    "extractor_key" : "Youtube",
+    "formats" : [
+      {
+        "ext" : "mp4",
+        "format_id" : "233",
+        "format_note" : "Default, low",
+        "language" : null,
+        "protocol" : "m3u8_native",
+        "resolution" : "audio only",
+        "tbr" : null,
+        "vcodec" : "none"
+      },
+      {
+        "ext" : "mp4",
+        "format_id" : "234",
+        "format_note" : "Default, high",
+        "language" : null,
+        "protocol" : "m3u8_native",
+        "resolution" : "audio only",
+        "tbr" : null,
+        "vcodec" : "none"
+      },
+      {
+        "acodec" : "none",
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "format_id" : "269",
+        "fps" : 15,
+        "height" : 144,
+        "protocol" : "m3u8_native",
+        "resolution" : "256x144",
+        "tbr" : 269.03399999999999,
+        "vcodec" : "avc1.42C00B",
+        "width" : 256
+      },
+      {
+        "acodec" : "none",
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "format_id" : "229",
+        "fps" : 30,
+        "height" : 240,
+        "protocol" : "m3u8_native",
+        "resolution" : "426x240",
+        "tbr" : 507.41800000000001,
+        "vcodec" : "avc1.4D4015",
+        "width" : 426
+      },
+      {
+        "acodec" : "none",
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "format_id" : "230",
+        "fps" : 30,
+        "height" : 360,
+        "protocol" : "m3u8_native",
+        "resolution" : "640x360",
+        "tbr" : 962.46100000000001,
+        "vcodec" : "avc1.4D401E",
+        "width" : 640
+      },
+      {
+        "acodec" : "none",
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "format_id" : "231",
+        "fps" : 30,
+        "height" : 480,
+        "protocol" : "m3u8_native",
+        "resolution" : "854x480",
+        "tbr" : 1282.5170000000001,
+        "vcodec" : "avc1.4D401F",
+        "width" : 854
+      },
+      {
+        "acodec" : "none",
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "format_id" : "311",
+        "fps" : 60,
+        "height" : 720,
+        "protocol" : "m3u8_native",
+        "resolution" : "1280x720",
+        "tbr" : 2922.1550000000002,
+        "vcodec" : "avc1.4D4020",
+        "width" : 1280
+      }
+    ],
+    "id" : "M3HKLzjvKPc",
+    "is_live" : true,
+    "live_status" : "is_live",
+    "thumbnail" : "https://i.ytimg.com/vi/M3HKLzjvKPc/maxresdefault.jpg",
+    "title" : "Live Video from the International Space Station (Official NASA Stream) 2026-10-06 03:53",
+    "upload_date" : "20260730",
+    "uploader" : "NASA",
+    "was_live" : false,
+    "webpage_url" : "https://www.youtube.com/watch?v=M3HKLzjvKPc",
+    "webpage_url_domain" : "youtube.com"
+  },
+  "tool" : "yt-dlp 2026.08.19"
+}

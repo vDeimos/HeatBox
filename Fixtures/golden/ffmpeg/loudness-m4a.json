@@ -1,0 +1,70 @@
+{
+  "description" : "Phobos's second pass: one steady correction, cover copied, tags kept",
+  "expect" : {
+    "arguments" : [
+      "-nostdin",
+      "-y",
+      "-hide_banner",
+      "-nostats",
+      "-loglevel",
+      "error",
+      "-i",
+      "/w/files/Song [abc].m4a",
+      "-map",
+      "0:a:0",
+      "-map",
+      "0:v?",
+      "-c:v",
+      "copy",
+      "-c:a",
+      "aac",
+      "-b:a",
+      "256k",
+      "-ar",
+      "44100",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=-38.26:measured_TP=-34.04:measured_LRA=0.00:measured_thresh=-48.26:offset=0.03:linear=true",
+      "-map_metadata",
+      "0",
+      "-movflags",
+      "+faststart",
+      "/w/scratch/out.m4a"
+    ],
+    "measure" : [
+      "-nostdin",
+      "-hide_banner",
+      "-nostats",
+      "-i",
+      "/w/files/Song [abc].m4a",
+      "-vn",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
+      "-f",
+      "null",
+      "-"
+    ]
+  },
+  "facts" : {
+    "audioCodec" : "aac",
+    "bitRate" : 130000,
+    "duration" : 240,
+    "hasCover" : true,
+    "sampleRate" : 44100,
+    "size" : 3900000
+  },
+  "input" : "/w/files/Song [abc].m4a",
+  "kind" : "loudness",
+  "measured" : {
+    "integrated" : -38.259999999999998,
+    "offset" : 0.029999999999999999,
+    "range" : 0,
+    "threshold" : -48.259999999999998,
+    "truePeak" : -34.039999999999999
+  },
+  "output" : "/w/scratch/out.m4a",
+  "pictureBlock" : null,
+  "recipe" : {
+    "evenLoudness" : true,
+    "mode" : "audio"
+  }
+}

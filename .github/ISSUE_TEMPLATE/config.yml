@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: A security problem
+    url: https://github.com/vDeimos
+    about: Please do not open a public issue. SECURITY.md says how to report it privately.
+  - name: A website stopped working
+    url: https://github.com/yt-dlp/yt-dlp/issues
+    about: If Update yt-dlp in Settings > Tools does not fix it, the site's support lives in yt-dlp.

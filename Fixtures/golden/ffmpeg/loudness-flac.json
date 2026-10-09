@@ -1,0 +1,67 @@
+{
+  "description" : "Lossless stays lossless",
+  "expect" : {
+    "arguments" : [
+      "-nostdin",
+      "-y",
+      "-hide_banner",
+      "-nostats",
+      "-loglevel",
+      "error",
+      "-i",
+      "/w/files/Song [abc].flac",
+      "-map",
+      "0:a:0",
+      "-map",
+      "0:v?",
+      "-c:v",
+      "copy",
+      "-c:a",
+      "flac",
+      "-ar",
+      "96000",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=-38.26:measured_TP=-34.04:measured_LRA=0.00:measured_thresh=-48.26:offset=0.03:linear=true",
+      "-map_metadata",
+      "0",
+      "/w/scratch/out.flac"
+    ],
+    "measure" : [
+      "-nostdin",
+      "-hide_banner",
+      "-nostats",
+      "-i",
+      "/w/files/Song [abc].flac",
+      "-vn",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
+      "-f",
+      "null",
+      "-"
+    ]
+  },
+  "facts" : {
+    "audioCodec" : "flac",
+    "bitRate" : 130000,
+    "duration" : 240,
+    "hasCover" : true,
+    "sampleRate" : 96000,
+    "size" : 3900000
+  },
+  "input" : "/w/files/Song [abc].flac",
+  "kind" : "loudness",
+  "measured" : {
+    "integrated" : -38.259999999999998,
+    "offset" : 0.029999999999999999,
+    "range" : 0,
+    "threshold" : -48.259999999999998,
+    "truePeak" : -34.039999999999999
+  },
+  "output" : "/w/scratch/out.flac",
+  "pictureBlock" : null,
+  "recipe" : {
+    "audioFormat" : "flac",
+    "evenLoudness" : true,
+    "mode" : "audio"
+  }
+}

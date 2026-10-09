@@ -1,0 +1,45 @@
+{
+  "convert" : "playEverywhere",
+  "description" : "To MP4: compatible video is only repackaged",
+  "expect" : {
+    "arguments" : [
+      "-nostdin",
+      "-y",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostats",
+      "-progress",
+      "pipe:1",
+      "-i",
+      "/v/Film.mkv",
+      "-map",
+      "0:v:0",
+      "-map",
+      "0:a:0?",
+      "-c:v",
+      "copy",
+      "-c:a",
+      "copy",
+      "-movflags",
+      "+faststart",
+      "/v/Film (MP4).mp4"
+    ],
+    "copiesOnly" : true,
+    "estimatedBytes" : 612000000,
+    "output" : "/v/Film (MP4).mp4",
+    "outputDuration" : 600
+  },
+  "facts" : {
+    "audioCodec" : "aac",
+    "bitRate" : 8160000,
+    "duration" : 600,
+    "height" : 2160,
+    "sampleRate" : 48000,
+    "size" : 612000000,
+    "videoCodec" : "h264",
+    "width" : 3840
+  },
+  "input" : "/v/Film.mkv",
+  "kind" : "convert"
+}

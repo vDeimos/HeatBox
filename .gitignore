@@ -1,0 +1,11 @@
+.build/
+.swiftpm/
+*.xcodeproj
+xcuserdata/
+DerivedData/
+.DS_Store
+dist/
+# Never commit personal data or secrets
+cookies.txt
+*.cookies
+.env

@@ -1,0 +1,10 @@
+{
+  "description" : "No links is refused",
+  "expect" : {
+    "refused" : "Paste at least one link that starts with http."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+
+  ]
+}

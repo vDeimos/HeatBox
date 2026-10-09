@@ -1,0 +1,14 @@
+{
+  "about" : "A YouTube video that does not exist.",
+  "captured" : "2026-10-06",
+  "errors" : "ERROR: [youtube] zzzzzzzzzzz: This video is unavailable",
+  "exitStatus" : 1,
+  "expect" : {
+    "failure" : "tool.unavailable",
+    "kind" : "failure",
+    "message" : "This video is no longer available."
+  },
+  "link" : "https://www.youtube.com/watch?v=zzzzzzzzzzz",
+  "output" : null,
+  "tool" : "yt-dlp 2026.08.19"
+}

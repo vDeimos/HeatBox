@@ -1,0 +1,10 @@
+{
+  "description" : "A link that is not http or https is refused",
+  "expect" : {
+    "refused" : "\"file:///etc/passwd\" isn't a web link. Links must start with http or https."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "file:///etc/passwd"
+  ]
+}

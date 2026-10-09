@@ -1,0 +1,71 @@
+{
+  "description" : "Opus: always 48 kHz, and the cover travels as a tag",
+  "expect" : {
+    "arguments" : [
+      "-nostdin",
+      "-y",
+      "-hide_banner",
+      "-nostats",
+      "-loglevel",
+      "error",
+      "-i",
+      "/w/files/Song [abc].opus",
+      "-map",
+      "0:a:0",
+      "-c:a",
+      "libopus",
+      "-b:a",
+      "64k",
+      "-ar",
+      "48000",
+      "-ac",
+      "1",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=-38.26:measured_TP=-34.04:measured_LRA=0.00:measured_thresh=-48.26:offset=0.03:linear=true",
+      "-map_metadata",
+      "0",
+      "-metadata:s:a:0",
+      "METADATA_BLOCK_PICTURE=AAAAAwAAAAppbWFnZS9qcGVn",
+      "/w/scratch/out.opus"
+    ],
+    "measure" : [
+      "-nostdin",
+      "-hide_banner",
+      "-nostats",
+      "-i",
+      "/w/files/Song [abc].opus",
+      "-vn",
+      "-af",
+      "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
+      "-f",
+      "null",
+      "-"
+    ]
+  },
+  "facts" : {
+    "audioCodec" : "opus",
+    "bitRate" : 130000,
+    "duration" : 240,
+    "hasCover" : true,
+    "sampleRate" : 48000,
+    "size" : 3900000
+  },
+  "input" : "/w/files/Song [abc].opus",
+  "kind" : "loudness",
+  "measured" : {
+    "integrated" : -38.259999999999998,
+    "offset" : 0.029999999999999999,
+    "range" : 0,
+    "threshold" : -48.259999999999998,
+    "truePeak" : -34.039999999999999
+  },
+  "output" : "/w/scratch/out.opus",
+  "pictureBlock" : "AAAAAwAAAAppbWFnZS9qcGVn",
+  "recipe" : {
+    "audioFormat" : "opus",
+    "audioQuality" : "k64",
+    "channels" : "mono",
+    "evenLoudness" : true,
+    "mode" : "audio"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description" : "Phobos: up to 1440p for a single video",
+  "expect" : {
+    "arguments" : [
+      "--newline",
+      "--no-colors",
+      "--progress",
+      "--progress-template",
+      "download:[[PROG]]%(progress._percent_str)s|%(progress._speed_str)s|%(progress._eta_str)s|%(progress._total_bytes_str)s|%(progress._total_bytes_estimate_str)s|%(info.playlist_index)s|%(info.n_entries)s|%(info.title)s",
+      "--ignore-config",
+      "--js-runtimes",
+      "deno:/tools/deno",
+      "--ffmpeg-location",
+      "/tools/ffmpeg",
+      "-S",
+      "res:1440",
+      "--embed-chapters",
+      "--embed-metadata",
+      "-N",
+      "4",
+      "-P",
+      "/Users/test/Movies/YouTube",
+      "-o",
+      "%(title).150B [%(id)s].%(ext)s",
+      "--no-overwrites",
+      "--no-mtime",
+      "--",
+      "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+    ],
+    "display" : "yt-dlp --ignore-config --js-runtimes deno:/tools/deno --ffmpeg-location /tools/ffmpeg -S res:1440 --embed-chapters --embed-metadata -N 4 -P /Users/test/Movies/YouTube -o '%(title).150B [%(id)s].%(ext)s' --no-overwrites --no-mtime -- 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'"
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "preset" : "res1440"
+}

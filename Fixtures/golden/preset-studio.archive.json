@@ -1,0 +1,50 @@
+{
+  "archiveFile" : "/Users/test/Movies/YouTube/yt-dlp-archive.txt",
+  "description" : "Studio built-in: archive",
+  "expect" : {
+    "arguments" : [
+      "--newline",
+      "--no-colors",
+      "--progress",
+      "--progress-template",
+      "download:[[PROG]]%(progress._percent_str)s|%(progress._speed_str)s|%(progress._eta_str)s|%(progress._total_bytes_str)s|%(progress._total_bytes_estimate_str)s|%(info.playlist_index)s|%(info.n_entries)s|%(info.title)s",
+      "--ignore-config",
+      "--js-runtimes",
+      "deno:/tools/deno",
+      "--ffmpeg-location",
+      "/tools/ffmpeg",
+      "--merge-output-format",
+      "mkv",
+      "--remux-video",
+      "mkv",
+      "--embed-chapters",
+      "--write-subs",
+      "--sub-langs",
+      "all,-live_chat",
+      "--embed-subs",
+      "--embed-metadata",
+      "--embed-thumbnail",
+      "--write-thumbnail",
+      "--write-description",
+      "--write-info-json",
+      "--download-archive",
+      "/Users/test/Movies/YouTube/yt-dlp-archive.txt",
+      "-N",
+      "4",
+      "-P",
+      "/Users/test/Movies/YouTube",
+      "-o",
+      "%(uploader)s/%(title)s.%(ext)s",
+      "--no-overwrites",
+      "--no-mtime",
+      "--",
+      "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+    ],
+    "display" : "yt-dlp --ignore-config --js-runtimes deno:/tools/deno --ffmpeg-location /tools/ffmpeg --merge-output-format mkv --remux-video mkv --embed-chapters --write-subs --sub-langs all,-live_chat --embed-subs --embed-metadata --embed-thumbnail --write-thumbnail --write-description --write-info-json --download-archive /Users/test/Movies/YouTube/yt-dlp-archive.txt -N 4 -P /Users/test/Movies/YouTube -o '%(uploader)s/%(title)s.%(ext)s' --no-overwrites --no-mtime -- 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'"
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "preset" : "studio.archive"
+}

@@ -1,0 +1,19 @@
+{
+  "convert" : "shrink:small",
+  "description" : "Shrink: a file that is already tiny is refused",
+  "expect" : {
+    "refused" : true
+  },
+  "facts" : {
+    "audioCodec" : "opus",
+    "bitRate" : 200000,
+    "duration" : 19,
+    "height" : 2160,
+    "sampleRate" : 48000,
+    "size" : 475000,
+    "videoCodec" : "vp9",
+    "width" : 3840
+  },
+  "input" : "/v/Tiny.webm",
+  "kind" : "convert"
+}

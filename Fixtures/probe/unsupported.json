@@ -1,0 +1,14 @@
+{
+  "about" : "A page with no video on it.",
+  "captured" : "2026-10-06",
+  "errors" : "ERROR: Unsupported URL: https://example.com/",
+  "exitStatus" : 1,
+  "expect" : {
+    "failure" : "tool.unsupportedSite",
+    "kind" : "failure",
+    "message" : "This site isn't supported, or the link doesn't point to a video page."
+  },
+  "link" : "https://example.com/",
+  "output" : null,
+  "tool" : "yt-dlp 2026.08.19"
+}

@@ -1,0 +1,39 @@
+{
+  "convert" : "extractAudio",
+  "description" : "Audio: AAC is copied, not re-encoded",
+  "expect" : {
+    "arguments" : [
+      "-nostdin",
+      "-y",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostats",
+      "-progress",
+      "pipe:1",
+      "-i",
+      "/v/Film.mkv",
+      "-vn",
+      "-map",
+      "0:a:0",
+      "-c:a",
+      "copy",
+      "/v/Film (audio).m4a"
+    ],
+    "copiesOnly" : true,
+    "output" : "/v/Film (audio).m4a",
+    "outputDuration" : 600
+  },
+  "facts" : {
+    "audioCodec" : "aac",
+    "bitRate" : 8160000,
+    "duration" : 600,
+    "height" : 2160,
+    "sampleRate" : 48000,
+    "size" : 612000000,
+    "videoCodec" : "h264",
+    "width" : 3840
+  },
+  "input" : "/v/Film.mkv",
+  "kind" : "convert"
+}

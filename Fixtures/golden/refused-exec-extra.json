@@ -1,0 +1,13 @@
+{
+  "description" : "An extra option that runs a program is refused",
+  "expect" : {
+    "refused" : "The extra option --exec isn't allowed. Extra options can only change how a download is chosen, paced or fetched. Remove it and try again."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "extraArguments" : "--exec 'rm -rf ~'"
+  }
+}

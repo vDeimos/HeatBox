@@ -1,0 +1,14 @@
+{
+  "about" : "A scheduled live stream that has not started.",
+  "captured" : "2026-10-06",
+  "errors" : "ERROR: [youtube] dGSqblvgLIE: This live event will begin in 30 hours.",
+  "exitStatus" : 1,
+  "expect" : {
+    "failure" : "upcoming",
+    "kind" : "failure",
+    "message" : "This video hasn't started yet. Try again once it has been published."
+  },
+  "link" : "https://www.youtube.com/watch?v=dGSqblvgLIE",
+  "output" : null,
+  "tool" : "yt-dlp 2026.08.19"
+}

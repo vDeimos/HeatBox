@@ -1,0 +1,63 @@
+HeatBox: read me first
+======================
+
+HeatBox saves videos from the web to your Mac in the quality you
+choose, keeps a library of them, and converts files you already have. It has
+no accounts and collects nothing.
+
+You need a Mac with macOS 13 or later (Apple silicon or Intel). This version
+was run on macOS 26 and 27 on Apple silicon. It was not run on macOS 13 to 15,
+or on an Intel Mac, before release.
+
+
+1. INSTALL
+   HeatBox used to be called Studio x Phobos. If you have that app, quit it
+   and move the old Studio x Phobos app from your Applications folder to the
+   Trash before installing HeatBox. Your library, settings, queue and browser
+   buttons are kept: both names use the same data, which is why only one of
+   them should stay on your Mac.
+
+   Drag HeatBox into your Applications folder.
+
+
+2. OPEN IT THE FIRST TIME
+   macOS will refuse at first, because the app is not signed with an Apple
+   Developer ID. This is expected.
+   - Open the app. A warning appears. Close it. Do not move the app to the Trash.
+   - Open System Settings > Privacy & Security and scroll down.
+   - Press "Open Anyway" beside the message about HeatBox, and confirm.
+   You do this once for each new version.
+
+   To check that your download is the one that was published, compare its
+   fingerprint with the .sha256 file next to it:
+       shasum -a 256 -c HeatBox-<version>-macos-universal.zip.sha256
+
+
+3. ONE-TIME SETUP
+   The first time, the app says it needs three free programs (yt-dlp, FFmpeg
+   and Deno). Press "Install the Programs". The app downloads them, checks
+   each against a fixed fingerprint, and keeps them in its own folder. If you
+   would rather use Homebrew, the same screen shows the command.
+
+
+4. USE IT
+   Copy the address of a video page, open the app, press Paste, choose a
+   version, and press Download. Videos go to your Movies folder, in a folder
+   named after the website. Change that in Settings.
+
+
+5. MEMBERS-ONLY VIDEOS (optional)
+   The app can use your own YouTube sign-in for videos you may watch. In
+   Settings, choose your browser and press "Copy my sign-in". If macOS blocks
+   it, open System Settings > Privacy & Security > Full Disk Access, switch
+   the app on, then quit and reopen it. The saved sign-in works like a
+   password and stays on your Mac. Switch it off when you are not using it.
+
+
+6. A FAIR WARNING
+   Saving a video can be against a website's terms, and what you may do with
+   a copy depends on where you live and who made it. Use the app for your own
+   viewing of things you are entitled to watch.
+
+
+Licences for the programs the app installs are in "Licences and Notices.txt".

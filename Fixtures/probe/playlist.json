@@ -1,0 +1,161 @@
+{
+  "about" : "A YouTube playlist with its own page.",
+  "captured" : "2026-10-06",
+  "errors" : "",
+  "exitStatus" : 0,
+  "expect" : {
+    "count" : 13,
+    "entries" : [
+      "pTHmtHXwVKY | The future of Blender | Blenderheads Ep. 13 | https://www.youtube.com/watch?v=pTHmtHXwVKY | 1539.0",
+      "DveYH4fQL4w | The personality test | Blenderheads Ep. 12 | https://www.youtube.com/watch?v=DveYH4fQL4w | 1000.0",
+      "6d5rI5y8hqQ | The end of an era | Blenderheads Ep. 11 | https://www.youtube.com/watch?v=6d5rI5y8hqQ | 780.0",
+      "V-1COPWo3ok | Blender: 26 years at SIGGRAPH! - BLENDERHEADS ep.10 | https://www.youtube.com/watch?v=V-1COPWo3ok | 1090.0",
+      "sHpv291cZY8 | From Artist to Developer – BLENDERHEADS Ep.9 | https://www.youtube.com/watch?v=sHpv291cZY8 | 1109.0",
+      "rcH_FStWob4 | The secret life of a Blender developer — BLENDERHEADS Ep. 8 | https://www.youtube.com/watch?v=rcH_FStWob4 | 1787.0",
+      "u8A59Jtluxw | BLENDERHEADS - Ep. 07 | https://www.youtube.com/watch?v=u8A59Jtluxw | 1849.0",
+      "rGq83KeZa50 | BLENDERHEADS - Ep. 06 | https://www.youtube.com/watch?v=rGq83KeZa50 | 1039.0",
+      "h8rauHRo1CY | BLENDERHEADS - Ep. 05 | https://www.youtube.com/watch?v=h8rauHRo1CY | 984.0",
+      "Kc5XEcHGIHU | BLENDERHEADS - Ep. 04 | https://www.youtube.com/watch?v=Kc5XEcHGIHU | 1186.0",
+      "a65LBYr0UOQ | BLENDERHEADS - Ep. 03 | https://www.youtube.com/watch?v=a65LBYr0UOQ | 1543.0",
+      "UzYBZfkEJrA | BLENDERHEADS - Ep. 02 | https://www.youtube.com/watch?v=UzYBZfkEJrA | 1203.0",
+      "V_dZtidLwo4 | BLENDERHEADS - Ep. 01 | https://www.youtube.com/watch?v=V_dZtidLwo4 | 1422.0"
+    ],
+    "kind" : "playlist",
+    "link" : "https://www.youtube.com/playlist?list=PLa1F2ddGya_8I8QCMCKlQUOQpgOga2nZ-",
+    "site" : "YouTube",
+    "title" : "BLENDERHEADS",
+    "uploader" : "Blender"
+  },
+  "link" : "https://www.youtube.com/playlist?list=PLa1F2ddGya_8I8QCMCKlQUOQpgOga2nZ-",
+  "output" : {
+    "_type" : "playlist",
+    "channel" : "Blender",
+    "entries" : [
+      {
+        "_type" : "url",
+        "duration" : 1539,
+        "id" : "pTHmtHXwVKY",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "The future of Blender | Blenderheads Ep. 13",
+        "url" : "https://www.youtube.com/watch?v=pTHmtHXwVKY"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1000,
+        "id" : "DveYH4fQL4w",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "The personality test | Blenderheads Ep. 12",
+        "url" : "https://www.youtube.com/watch?v=DveYH4fQL4w"
+      },
+      {
+        "_type" : "url",
+        "duration" : 780,
+        "id" : "6d5rI5y8hqQ",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "The end of an era | Blenderheads Ep. 11",
+        "url" : "https://www.youtube.com/watch?v=6d5rI5y8hqQ"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1090,
+        "id" : "V-1COPWo3ok",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "Blender: 26 years at SIGGRAPH! - BLENDERHEADS ep.10",
+        "url" : "https://www.youtube.com/watch?v=V-1COPWo3ok"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1109,
+        "id" : "sHpv291cZY8",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "From Artist to Developer – BLENDERHEADS Ep.9",
+        "url" : "https://www.youtube.com/watch?v=sHpv291cZY8"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1787,
+        "id" : "rcH_FStWob4",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "The secret life of a Blender developer — BLENDERHEADS Ep. 8",
+        "url" : "https://www.youtube.com/watch?v=rcH_FStWob4"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1849,
+        "id" : "u8A59Jtluxw",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 07",
+        "url" : "https://www.youtube.com/watch?v=u8A59Jtluxw"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1039,
+        "id" : "rGq83KeZa50",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 06",
+        "url" : "https://www.youtube.com/watch?v=rGq83KeZa50"
+      },
+      {
+        "_type" : "url",
+        "duration" : 984,
+        "id" : "h8rauHRo1CY",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 05",
+        "url" : "https://www.youtube.com/watch?v=h8rauHRo1CY"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1186,
+        "id" : "Kc5XEcHGIHU",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 04",
+        "url" : "https://www.youtube.com/watch?v=Kc5XEcHGIHU"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1543,
+        "id" : "a65LBYr0UOQ",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 03",
+        "url" : "https://www.youtube.com/watch?v=a65LBYr0UOQ"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1203,
+        "id" : "UzYBZfkEJrA",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 02",
+        "url" : "https://www.youtube.com/watch?v=UzYBZfkEJrA"
+      },
+      {
+        "_type" : "url",
+        "duration" : 1422,
+        "id" : "V_dZtidLwo4",
+        "ie_key" : "Youtube",
+        "live_status" : null,
+        "title" : "BLENDERHEADS - Ep. 01",
+        "url" : "https://www.youtube.com/watch?v=V_dZtidLwo4"
+      }
+    ],
+    "extractor_key" : "YoutubeTab",
+    "id" : "PLa1F2ddGya_8I8QCMCKlQUOQpgOga2nZ-",
+    "playlist_count" : 13,
+    "title" : "BLENDERHEADS",
+    "uploader" : "Blender",
+    "webpage_url" : "https://www.youtube.com/playlist?list=PLa1F2ddGya_8I8QCMCKlQUOQpgOga2nZ-",
+    "webpage_url_domain" : "youtube.com"
+  },
+  "tool" : "yt-dlp 2026.08.19"
+}

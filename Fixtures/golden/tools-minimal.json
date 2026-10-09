@@ -1,0 +1,34 @@
+{
+  "description" : "Only yt-dlp is installed: no FFmpeg or Deno arguments",
+  "expect" : {
+    "arguments" : [
+      "--newline",
+      "--no-colors",
+      "--progress",
+      "--progress-template",
+      "download:[[PROG]]%(progress._percent_str)s|%(progress._speed_str)s|%(progress._eta_str)s|%(progress._total_bytes_str)s|%(progress._total_bytes_estimate_str)s|%(info.playlist_index)s|%(info.n_entries)s|%(info.title)s",
+      "--ignore-config",
+      "--embed-chapters",
+      "--embed-metadata",
+      "-N",
+      "4",
+      "-P",
+      "/Users/test/Movies/YouTube",
+      "-o",
+      "%(title).150B [%(id)s].%(ext)s",
+      "--no-overwrites",
+      "--no-mtime",
+      "--",
+      "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+    ],
+    "display" : "yt-dlp --ignore-config --embed-chapters --embed-metadata -N 4 -P /Users/test/Movies/YouTube -o '%(title).150B [%(id)s].%(ext)s' --no-overwrites --no-mtime -- 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'"
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "preset" : "best",
+  "tools" : {
+    "ytdlp" : "/tools/yt-dlp"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "about" : "A YouTube Mix, which the site refuses to list.",
+  "captured" : "2026-10-06",
+  "errors" : "ERROR: [youtube:tab] RDaqz-KE-bpKQ: YouTube said: This playlist type is unviewable.",
+  "exitStatus" : 1,
+  "expect" : {
+    "failure" : "tool.unviewablePlaylist",
+    "kind" : "failure",
+    "message" : "YouTube won't show this kind of playlist. Auto-generated Mixes and some personal lists can't be read. Open the video itself, or use a playlist that has its own page."
+  },
+  "link" : "https://www.youtube.com/playlist?list=RDaqz-KE-bpKQ",
+  "output" : null,
+  "tool" : "yt-dlp 2026.08.19"
+}

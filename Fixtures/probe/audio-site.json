@@ -1,0 +1,106 @@
+{
+  "about" : "A track on a site that only has audio.",
+  "captured" : "2026-10-06",
+  "errors" : "",
+  "exitStatus" : 0,
+  "expect" : {
+    "chapters" : [
+
+    ],
+    "choices" : [
+      {
+        "badge" : "as offered",
+        "bytes" : null,
+        "explanation" : "This site offers a single version, so there is nothing to choose between. Downloads it exactly as it is.",
+        "id" : "best",
+        "size" : "size unknown",
+        "title" : "Original file"
+      },
+      {
+        "badge" : "M4A",
+        "bytes" : 4277720,
+        "explanation" : "Just the sound. For music, podcasts and talks.",
+        "id" : "audio",
+        "size" : "about 4.3 MB",
+        "title" : "Audio only"
+      }
+    ],
+    "duration" : "3:33",
+    "formats" : [
+      "hls_aac_160k | Audio | m4a | audio only |  |  | mp4a.40.2 | 160k | ~4.3 MB | ",
+      "hls_aac_96k | Audio | m4a | audio only |  |  | mp4a.40.2 | 96k | ~2.6 MB | ",
+      "http_mp3_0_0 | Audio | mp3 | audio only |  |  | mp3 | 128k | ~3.4 MB | ",
+      "hls_mp3_0_0 | Audio | mp3 | audio only |  |  | mp3 | 128k | ~3.4 MB | "
+    ],
+    "id" : "293",
+    "kind" : "video",
+    "link" : "https://soundcloud.com/forss/flickermood",
+    "seconds" : 213.886,
+    "site" : "SoundCloud",
+    "thumbnail" : "https://i1.sndcdn.com/artworks-000067273316-smsiqx-original.jpg",
+    "title" : "Flickermood",
+    "uploadDate" : "20070922",
+    "uploader" : "Forss"
+  },
+  "link" : "https://soundcloud.com/forss/flickermood",
+  "output" : {
+    "_type" : "video",
+    "duration" : 213.886,
+    "duration_string" : "3:33",
+    "extractor_key" : "Soundcloud",
+    "formats" : [
+      {
+        "acodec" : "mp3",
+        "ext" : "mp3",
+        "filesize_approx" : 3422176,
+        "format_id" : "hls_mp3_0_0",
+        "format_note" : null,
+        "protocol" : "m3u8_native",
+        "resolution" : "audio only",
+        "tbr" : 128,
+        "vcodec" : "none"
+      },
+      {
+        "acodec" : "mp3",
+        "ext" : "mp3",
+        "filesize_approx" : 3422176,
+        "format_id" : "http_mp3_0_0",
+        "format_note" : null,
+        "protocol" : "http",
+        "resolution" : "audio only",
+        "tbr" : 128,
+        "vcodec" : "none"
+      },
+      {
+        "acodec" : "mp4a.40.2",
+        "ext" : "m4a",
+        "filesize_approx" : 2566632,
+        "format_id" : "hls_aac_96k",
+        "format_note" : null,
+        "protocol" : "m3u8_native",
+        "resolution" : "audio only",
+        "tbr" : 96,
+        "vcodec" : "none"
+      },
+      {
+        "acodec" : "mp4a.40.2",
+        "ext" : "m4a",
+        "filesize_approx" : 4277720,
+        "format_id" : "hls_aac_160k",
+        "format_note" : null,
+        "protocol" : "m3u8_native",
+        "resolution" : "audio only",
+        "tbr" : 160,
+        "vcodec" : "none"
+      }
+    ],
+    "id" : "293",
+    "thumbnail" : "https://i1.sndcdn.com/artworks-000067273316-smsiqx-original.jpg",
+    "title" : "Flickermood",
+    "upload_date" : "20070922",
+    "uploader" : "Forss",
+    "webpage_url" : "https://soundcloud.com/forss/flickermood",
+    "webpage_url_domain" : "soundcloud.com"
+  },
+  "tool" : "yt-dlp 2026.08.19"
+}

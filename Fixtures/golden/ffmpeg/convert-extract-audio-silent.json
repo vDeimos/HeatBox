@@ -1,0 +1,18 @@
+{
+  "convert" : "extractAudio",
+  "description" : "Audio: a file with no sound is refused",
+  "expect" : {
+    "refused" : true
+  },
+  "facts" : {
+    "bitRate" : 8160000,
+    "duration" : 600,
+    "height" : 2160,
+    "sampleRate" : 48000,
+    "size" : 612000000,
+    "videoCodec" : "h264",
+    "width" : 3840
+  },
+  "input" : "/v/Film.mkv",
+  "kind" : "convert"
+}

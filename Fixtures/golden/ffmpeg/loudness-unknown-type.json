@@ -1,0 +1,29 @@
+{
+  "description" : "A kind of file the pass cannot write is left alone",
+  "expect" : {
+    "refused" : true
+  },
+  "facts" : {
+    "audioCodec" : "opus",
+    "bitRate" : 130000,
+    "duration" : 240,
+    "hasCover" : true,
+    "sampleRate" : 44100,
+    "size" : 3900000
+  },
+  "input" : "/w/files/Song [abc].webm",
+  "kind" : "loudness",
+  "measured" : {
+    "integrated" : -38.259999999999998,
+    "offset" : 0.029999999999999999,
+    "range" : 0,
+    "threshold" : -48.259999999999998,
+    "truePeak" : -34.039999999999999
+  },
+  "output" : "/w/scratch/out.webm",
+  "pictureBlock" : null,
+  "recipe" : {
+    "evenLoudness" : true,
+    "mode" : "audio"
+  }
+}

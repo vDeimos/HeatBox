@@ -1,0 +1,13 @@
+{
+  "description" : "An abbreviation of a refused option is refused too",
+  "expect" : {
+    "refused" : "The extra option --exec-b isn't allowed. Extra options can only change how a download is chosen, paced or fetched. Remove it and try again."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "extraArguments" : "--exec-b touch"
+  }
+}

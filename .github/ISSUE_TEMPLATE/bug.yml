@@ -1,0 +1,48 @@
+name: Something does not work
+description: A download fails, a screen looks wrong, the app behaves unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. **Security problems do not go here:** see SECURITY.md.
+        If a download suddenly fails, try **Settings > Tools > Update yt-dlp** first: most sudden failures are a website changing.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what you saw instead. The exact sentence the app showed helps most.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to see it again
+      placeholder: |
+        1. Paste a link from ...
+        2. Choose ...
+        3. Press Download
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Settings > Tools > Save Diagnostics… writes a text file with versions, switches and error sentences. It holds no links, titles, file names or user name. Paste it here or attach it.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: HeatBox and macOS versions
+      placeholder: HeatBox 1.1.0, macOS 15.2, Apple silicon
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Website (for a download problem)
+      description: The site, and the link if you are happy to share it.
+    validations:
+      required: false

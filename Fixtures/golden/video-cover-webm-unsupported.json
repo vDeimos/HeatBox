@@ -1,0 +1,47 @@
+{
+  "description" : "WebM cannot hold cover art, so none is embedded and a warning is raised",
+  "expect" : {
+    "arguments" : [
+      "--newline",
+      "--no-colors",
+      "--progress",
+      "--progress-template",
+      "download:[[PROG]]%(progress._percent_str)s|%(progress._speed_str)s|%(progress._eta_str)s|%(progress._total_bytes_str)s|%(progress._total_bytes_estimate_str)s|%(info.playlist_index)s|%(info.n_entries)s|%(info.title)s",
+      "--ignore-config",
+      "--js-runtimes",
+      "deno:/tools/deno",
+      "--ffmpeg-location",
+      "/tools/ffmpeg",
+      "-S",
+      "ext:webm:webm",
+      "--merge-output-format",
+      "webm",
+      "--remux-video",
+      "mp4>mkv/mkv>mkv/webm",
+      "--embed-chapters",
+      "--embed-metadata",
+      "-N",
+      "4",
+      "-P",
+      "/Users/test/Movies/YouTube",
+      "-o",
+      "%(title).150B [%(id)s].%(ext)s",
+      "--no-overwrites",
+      "--no-mtime",
+      "--",
+      "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+    ],
+    "display" : "yt-dlp --ignore-config --js-runtimes deno:/tools/deno --ffmpeg-location /tools/ffmpeg -S ext:webm:webm --merge-output-format webm --remux-video 'mp4>mkv/mkv>mkv/webm' --embed-chapters --embed-metadata -N 4 -P /Users/test/Movies/YouTube -o '%(title).150B [%(id)s].%(ext)s' --no-overwrites --no-mtime -- 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'",
+    "warnings" : [
+      "Cover art can't be embedded in this file type, so none will be added. Choose MP4 or MKV to keep it."
+    ]
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "container" : "webm",
+    "embedThumbnail" : true
+  }
+}

@@ -1,0 +1,58 @@
+name: CI
+
+# Actions are pinned by commit and the runner by its macOS version, so a
+# build only changes when this file does (Dependabot proposes the updates).
+# The tools the tests run come from Homebrew at whatever version it has that
+# day; the app's own copies are pinned in tools.lock.json.
+
+on:
+  push:
+    # A release is prepared on its own branch before it reaches main.
+    branches: [main, "heatbox/**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Toolchain
+        run: |
+          xcode-select -p
+          swift --version
+      - name: Install the tools the integration tests run
+        # Real yt-dlp, FFmpeg (with ffprobe) and Deno; a missing tool fails the tests.
+        run: |
+          brew install yt-dlp ffmpeg deno
+          yt-dlp --version
+          ffmpeg -version | head -1
+          deno --version | head -1
+      - name: Lint
+        run: scripts/lint.sh
+      - name: Build
+        run: swift build
+      - name: Test
+        run: scripts/test.sh
+      - name: Universal release build
+        run: |
+          swift build -c release --arch arm64 --arch x86_64
+          binary="$(swift build -c release --arch arm64 --arch x86_64 --show-bin-path)/StudioXPhobos"
+          lipo -archs "$binary"
+          lipo -archs "$binary" | grep -q arm64
+          lipo -archs "$binary" | grep -q x86_64
+          "$binary" --smoke
+      - name: Build the app and check that it launches
+        # Assembles the .app, starts it with an empty support folder, waits
+        # for its window and its queue, and quits it.
+        run: |
+          scripts/build.sh --universal --check
+          plutil -p "dist/HeatBox.app/Contents/Info.plist"
+          codesign --verify --deep --strict --verbose "dist/HeatBox.app"

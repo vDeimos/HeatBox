@@ -1,0 +1,17 @@
+{
+  "description" : "A clip cannot also be split into chapters",
+  "expect" : {
+    "refused" : "A clip can't also be split into chapters. Turn one of them off."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "clip" : {
+      "end" : 5,
+      "start" : 1
+    },
+    "splitChapters" : true
+  }
+}

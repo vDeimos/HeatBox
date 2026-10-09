@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "tools": {
+    "yt-dlp": {
+      "version": "2026.08.19",
+      "license": "Unlicense",
+      "source": "https://github.com/yt-dlp/yt-dlp/tree/2026.08.19",
+      "artifacts": {
+        "arm64": { "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos", "sha256": "0f192b7ec147ab6288885d6351d9ab67367640029b4377576ef46dd79cf7b202", "size": 37146048, "kind": "file", "member": "" },
+        "x86_64": { "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos", "sha256": "0f192b7ec147ab6288885d6351d9ab67367640029b4377576ef46dd79cf7b202", "size": 37146048, "kind": "file", "member": "" }
+      }
+    },
+    "ffmpeg": {
+      "version": "9.0.2",
+      "license": "GPL-3.0-or-later (this build enables GPL and version 3 parts)",
+      "source": "https://ffmpeg.martin-riedl.de/",
+      "artifacts": {
+        "arm64": { "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffmpeg.zip", "sha256": "c8ed4c4e6978a03c485edbfe4e0a5dc2380f8a30bba5150531b31b094492d924", "size": 28395699, "kind": "zip", "member": "ffmpeg" },
+        "x86_64": { "url": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffmpeg.zip", "sha256": "7c6b4125b191cbf773832dc51f424cf2b6bb7da43007d1e066f95909e47cacd4", "size": 33816391, "kind": "zip", "member": "ffmpeg" }
+      }
+    },
+    "ffprobe": {
+      "version": "9.0.2",
+      "license": "GPL-3.0-or-later (this build enables GPL and version 3 parts)",
+      "source": "https://ffmpeg.martin-riedl.de/",
+      "artifacts": {
+        "arm64": { "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffprobe.zip", "sha256": "fcbe839537485eaee7a7a8bc5cbc0f90d53617e80943e8a5b2e31cb851197ea6", "size": 28317701, "kind": "zip", "member": "ffprobe" },
+        "x86_64": { "url": "https://ffmpeg.martin-riedl.de/download/macos/amd64/1789931006_9.0.2/ffprobe.zip", "sha256": "2322438ed2f6319a691291b247d09c69dcaa3a982460d1f269a7e1af335cfdfd", "size": 33719233, "kind": "zip", "member": "ffprobe" }
+      }
+    },
+    "deno": {
+      "version": "2.9.7",
+      "license": "MIT",
+      "source": "https://github.com/denoland/deno/tree/v2.9.7",
+      "artifacts": {
+        "arm64": { "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip", "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c", "size": 38469316, "kind": "zip", "member": "deno" },
+        "x86_64": { "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-apple-darwin.zip", "sha256": "95daaff11c116a52ad54785e7914c8e9c9cdcaba793c5ed929c74ca2d8e6259a", "size": 42295422, "kind": "zip", "member": "deno" }
+      }
+    }
+  }
+}

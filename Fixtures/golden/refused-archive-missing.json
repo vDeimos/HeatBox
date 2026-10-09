@@ -1,0 +1,13 @@
+{
+  "description" : "An archive recipe with no archive file is refused",
+  "expect" : {
+    "refused" : "To skip videos you already have, HeatBox needs an archive file, and none was provided."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "useArchive" : true
+  }
+}

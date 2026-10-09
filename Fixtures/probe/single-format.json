@@ -1,0 +1,57 @@
+{
+  "about" : "A direct link to one file: a single version, with nothing known about its picture or sound.",
+  "captured" : "2026-10-06",
+  "errors" : "",
+  "exitStatus" : 0,
+  "expect" : {
+    "chapters" : [
+
+    ],
+    "choices" : [
+      {
+        "badge" : "as offered",
+        "bytes" : null,
+        "explanation" : "This site offers a single version, so there is nothing to choose between. Downloads it exactly as it is.",
+        "id" : "best",
+        "size" : "size unknown",
+        "title" : "Original file"
+      }
+    ],
+    "duration" : "",
+    "formats" : [
+      "mp4 | Unknown | mp4 |  |  |  |  |  |  | "
+    ],
+    "id" : "big_buck_bunny_720p_surround",
+    "kind" : "video",
+    "link" : "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    "seconds" : 0,
+    "site" : "archive.org",
+    "thumbnail" : "",
+    "title" : "big_buck_bunny_720p_surround",
+    "uploadDate" : "20141203",
+    "uploader" : ""
+  },
+  "link" : "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+  "output" : {
+    "_type" : "video",
+    "extractor_key" : "Generic",
+    "formats" : [
+      {
+        "dynamic_range" : "SDR",
+        "ext" : "mp4",
+        "filesize_approx" : null,
+        "format_id" : "mp4",
+        "protocol" : "https",
+        "resolution" : null,
+        "tbr" : null,
+        "vcodec" : null
+      }
+    ],
+    "id" : "big_buck_bunny_720p_surround",
+    "title" : "big_buck_bunny_720p_surround",
+    "upload_date" : "20141203",
+    "webpage_url" : "https://dn710604.ca.archive.org/0/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    "webpage_url_domain" : "dn710604.ca.archive.org"
+  },
+  "tool" : "yt-dlp 2026.08.19"
+}

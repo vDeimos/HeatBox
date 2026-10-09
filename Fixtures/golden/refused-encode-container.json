@@ -1,0 +1,15 @@
+{
+  "description" : "VP9 cannot go in MOV",
+  "expect" : {
+    "refused" : "libvpx-vp9 can't be stored in a MOV file. Choose WEBM, or a different encoder."
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "container" : "mov",
+    "encodeEnabled" : true,
+    "encoder" : "libvpx-vp9"
+  }
+}

@@ -1,0 +1,12 @@
+# Keeps the GitHub Actions the workflows use, which are pinned by commit, up
+# to date: one pull request per action when a newer release exists. The app
+# itself has no package dependencies (Package.swift names none); its tools are
+# pinned in tools.lock.json and checked by the "Tool lock" workflow.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "Update"

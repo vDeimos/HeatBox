@@ -1,0 +1,42 @@
+{
+  "description" : "Reading a browser's sign-in is allowed but warned about",
+  "expect" : {
+    "arguments" : [
+      "--newline",
+      "--no-colors",
+      "--progress",
+      "--progress-template",
+      "download:[[PROG]]%(progress._percent_str)s|%(progress._speed_str)s|%(progress._eta_str)s|%(progress._total_bytes_str)s|%(progress._total_bytes_estimate_str)s|%(info.playlist_index)s|%(info.n_entries)s|%(info.title)s",
+      "--ignore-config",
+      "--js-runtimes",
+      "deno:/tools/deno",
+      "--ffmpeg-location",
+      "/tools/ffmpeg",
+      "--embed-chapters",
+      "--embed-metadata",
+      "-N",
+      "4",
+      "--cookies-from-browser",
+      "safari",
+      "-P",
+      "/Users/test/Movies/YouTube",
+      "-o",
+      "%(title).150B [%(id)s].%(ext)s",
+      "--no-overwrites",
+      "--no-mtime",
+      "--",
+      "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+    ],
+    "display" : "yt-dlp --ignore-config --js-runtimes deno:/tools/deno --ffmpeg-location /tools/ffmpeg --embed-chapters --embed-metadata -N 4 --cookies-from-browser safari -P /Users/test/Movies/YouTube -o '%(title).150B [%(id)s].%(ext)s' --no-overwrites --no-mtime -- 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'",
+    "warnings" : [
+      "Reading a browser's sign-in lets HeatBox see every site's cookies. Use a saved sign-in instead when you can."
+    ]
+  },
+  "folder" : "/Users/test/Movies/YouTube",
+  "links" : [
+    "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  ],
+  "recipe" : {
+    "cookieBrowser" : "safari"
+  }
+}

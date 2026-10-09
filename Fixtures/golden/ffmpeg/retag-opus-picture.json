@@ -1,0 +1,43 @@
+{
+  "cover" : {
+    "mime" : "image/png",
+    "path" : "/w/scratch/cover.img"
+  },
+  "description" : "An Opus track: tags lifted from the stream, the cover as a picture tag",
+  "expect" : {
+    "arguments" : [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "/w/files/Album (chapters)/001 One More Time.opus",
+      "-map",
+      "0:a",
+      "-c",
+      "copy",
+      "-map_metadata",
+      "0:s:a:0",
+      "-map_metadata:s:a",
+      "-1",
+      "-metadata",
+      "title=One More Time",
+      "-metadata",
+      "track=1/12",
+      "-metadata",
+      "METADATA_BLOCK_PICTURE=AAAAAwAAAAppbWFnZS9wbmc=",
+      "/w/scratch/out.opus"
+    ]
+  },
+  "index" : 0,
+  "kind" : "retag",
+  "output" : "/w/scratch/out.opus",
+  "pictureBlock" : "AAAAAwAAAAppbWFnZS9wbmc=",
+  "total" : 12,
+  "track" : {
+    "artist" : null,
+    "path" : "/w/files/Album (chapters)/001 One More Time.opus",
+    "title" : "One More Time"
+  }
+}

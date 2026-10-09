@@ -1,0 +1,39 @@
+HeatBox: licences and notices
+=============================
+
+HeatBox itself is released under the MIT licence (the LICENSE file
+that comes with it). It is written fresh, drawing on two earlier apps by the
+same author, Phobos and YT-DLP Studio.
+
+The app does not contain the programs below. On request it downloads them
+from the addresses listed in tools.lock.json, checks each against a fixed
+SHA-256 fingerprint, and keeps them in its own folder under
+~/Library/Application Support/Studio x Phobos/bin. Each is a separate
+program under its own licence, and each keeps it.
+
+yt-dlp            Unlicense (public domain)
+                  Source: https://github.com/yt-dlp/yt-dlp
+                  The standalone program also contains Python and other
+                  libraries under their own licences; yt-dlp lists them with
+                  each release.
+
+FFmpeg, ffprobe   GNU General Public License, version 3 or later
+                  (this build enables the GPL and version 3 parts)
+                  Built and signed by Martin Riedl: https://ffmpeg.martin-riedl.de/
+                  FFmpeg's source code: https://ffmpeg.org/download.html
+                  The build's own page lists its exact configuration, the
+                  libraries inside it and the source it was made from.
+                  FFmpeg is a trademark of Fabrice Bellard, originator of the
+                  FFmpeg project.
+
+Deno              MIT licence
+                  Source: https://github.com/denoland/deno
+                  Used so yt-dlp can read YouTube's pages.
+
+Because the FFmpeg build is GPL-3.0-or-later, anyone who passes that program
+on must offer its source. HeatBox passes nothing on: the program goes
+from its builder's server to the person's Mac. If you want the app to use a
+different FFmpeg, choose one in Settings > Tools, or install Homebrew's.
+
+HeatBox collects nothing and sends nothing to its author. See
+docs/PRIVACY.md.
