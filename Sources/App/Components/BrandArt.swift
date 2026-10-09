@@ -1,4 +1,4 @@
-// BrandArt.swift: HeatBox's artwork inside the app (ADR-011).
+// BrandArt.swift: HeatBox's artwork inside the app.
 //
 // The approved illustration, unchanged: never stretched, recoloured or
 // cropped, never under text, and never drawn smaller than 64 points, below

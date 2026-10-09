@@ -20,7 +20,7 @@ public struct QueueSettings: Equatable, Sendable {
     }
 }
 
-/// The list of downloads and the rules for running them (ADR-008: an actor
+/// The list of downloads and the rules for running them (an actor
 /// that owns the state and publishes snapshots).
 ///
 /// Jobs run oldest first, a few at a time. Nothing runs unless asked: a job

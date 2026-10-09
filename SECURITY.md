@@ -37,7 +37,7 @@ It runs as an ordinary app under your account, is not sandboxed, and asks for no
 
 - Release zips are built by GitHub Actions from a tagged commit with a published SHA-256. On a public repository a build attestation is recorded as well. The workflows' actions are pinned by commit and the runner by its macOS version.
 - A weekly workflow downloads every file `tools.lock.json` names and checks it against the lock, so a file that is moved or replaced upstream is noticed.
-- Releases are signed ad hoc, **not** with an Apple Developer ID, and not notarised (ADR-010). macOS asks you to approve the first opening in System Settings. Compare the checksum before you do.
+- Releases are signed ad hoc, **not** with an Apple Developer ID, and not notarised. macOS asks you to approve the first opening in System Settings. Compare the checksum before you do.
 - FFmpeg comes from a third-party builder (martin-riedl.de), signed by them, GPL-3.0-or-later. It is pinned and checked by fingerprint, so a changed file is refused, but the fingerprint was taken from that builder's server by the maintainer; the app cannot tell an honest build from a dishonest one that was already published.
 
 ## Known limits

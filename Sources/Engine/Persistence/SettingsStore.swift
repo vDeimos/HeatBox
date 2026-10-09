@@ -11,7 +11,7 @@ public enum ThemeChoice: String, CaseIterable, Codable, Sendable {
 }
 
 /// The stored names are Phobos's, so its saved settings can be imported
-/// unchanged (Phase 7). Ember is HeatBox's own (ADR-011).
+/// unchanged (Phase 7). Ember is HeatBox's own.
 public enum AccentChoice: String, CaseIterable, Codable, Sendable {
     case ember, blue, peach, green, pink, mauve, teal
 }
@@ -152,7 +152,7 @@ public struct AppSettings: Codable, Equatable, Sendable {
     }
 }
 
-/// The settings on disk (`settings.json`, ADR-007). The file has a version
+/// The settings on disk (`settings.json`). The file has a version
 /// number, and a field that cannot be read takes its default.
 public struct SettingsStore: Sendable {
     public static let version = 1
@@ -211,7 +211,7 @@ public struct SettingsStore: Sendable {
 
     /// An install from before the app was called HeatBox keeps the folders,
     /// the theme and the accent it had by default; only a new one gets
-    /// HeatBox's (ADR-011).
+    /// HeatBox's.
     private func defaults(usedBefore: Bool) -> AppSettings {
         var settings = AppSettings()
         if usedBefore {

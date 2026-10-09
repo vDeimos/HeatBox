@@ -104,6 +104,6 @@ HeatBox was called Studio x Phobos up to version 1.0.0: one app made from two ea
 
 HeatBox is under the MIT licence ([LICENSE](LICENSE)). The programs it installs keep their own licences, listed in [Resources/NOTICES.txt](Resources/NOTICES.txt); FFmpeg's build is GPL-3.0-or-later.
 
-HeatBox is by vDeimos. It draws on Phobos, also by vDeimos, and adapts code from YT-DLP Studio, now named [Sipass](https://github.com/dustalexw/sipass), by dustalexw, used, modified and licensed under the MIT licence with its author's permission.
+HeatBox is by vDeimos. It draws on Phobos, also by vDeimos, and adapts code from YT-DLP Studio, now named [Sipass](https://github.com/dustalexw/sipass), by dustalexw, used with his permission. That permission is recorded privately, not in this repository.
 
 The films in the screenshots are open movies by the Blender Foundation and Blender Studio (Big Buck Bunny, Sintel, Tears of Steel and Spring), licensed CC BY.

@@ -39,7 +39,7 @@ struct SQLiteError: Error, Equatable {
     let message: String
 }
 
-/// One open SQLite database (ADR-007). It is the system's own library; the
+/// One open SQLite database. It is the system's own library; the
 /// engine links nothing else. Statements take their values as parameters,
 /// never as text put into the statement. Each database is owned by one actor,
 /// which is what makes handing this object across tasks safe.

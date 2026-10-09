@@ -1,6 +1,6 @@
 import Foundation
 
-/// The record of what has been downloaded, in a SQLite database (ADR-007).
+/// The record of what has been downloaded, in a SQLite database.
 ///
 /// The Library is the app's memory, never the owner of the files: a record
 /// can be taken off the list without touching its file, a file is only ever

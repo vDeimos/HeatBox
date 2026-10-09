@@ -22,7 +22,7 @@ public struct FolderRules: Codable, Equatable, Sendable {
 
     /// What `standard` was while the app was called Studio x Phobos. An
     /// install from then that never saved its folders keeps this one, so its
-    /// audio stays where it was (ADR-011).
+    /// audio stays where it was.
     public static func legacy(home: String = NSHomeDirectory()) -> FolderRules {
         named("Studio x Phobos", home: home)
     }

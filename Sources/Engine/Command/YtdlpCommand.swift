@@ -77,7 +77,7 @@ public enum YtdlpCommand {
             self.environment = environment
         }
 
-        /// Taken from the registry (ADR-003); nil when yt-dlp itself is missing.
+        /// Taken from the registry; nil when yt-dlp itself is missing.
         public init?(registry: ToolRegistry) {
             guard let ytdlp = registry.path(.ytdlp) else { return nil }
             self.init(ytdlp: ytdlp, ffmpeg: registry.path(.ffmpeg), deno: registry.path(.deno),

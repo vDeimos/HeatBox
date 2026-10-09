@@ -12,6 +12,6 @@ Rules that shape the code (plan Section 3.2): the engine never imports a UI fram
 
 Data flow of a download: Download screen (`DownloadDraft`) → `JobRequest` → `JobQueue` (actor) → `ToolJobWorker` → look-up (`Probe`) → comment chapters → yt-dlp (`YtdlpCommand`) → per file: retag, loudness, re-encode (`PostProcess`) → `Delivery` → `LibraryRepository` → published back to the Queue and Library screens.
 
-Persistence (ADR-007): versioned JSON for settings, presets, queue and following; SQLite for the Library and transcripts; all under `~/Library/Application Support/Studio x Phobos`. Tools live in its `bin/`, installed by `ToolProvisioner` from `tools.lock.json` (ADR-003).
+Persistence: versioned JSON for settings, presets, queue and following; SQLite for the Library and transcripts; all under `~/Library/Application Support/Studio x Phobos`. Tools live in its `bin/`, installed by `ToolProvisioner` from `tools.lock.json`.
 
-Build: `scripts/build.sh` assembles and ad-hoc signs the `.app` (ADR-010); `scripts/package.sh` packs the release zip; CI (`.github/workflows/ci.yml`) lints, builds and tests each ready pull request, and also builds the universal app and launches it on `main` and on request (`scripts/check.sh` runs the same locally; docs/TESTING.md); `release.yml` runs on a tag.
+Build: `scripts/build.sh` assembles and ad-hoc signs the `.app`; `scripts/package.sh` packs the release zip; CI (`.github/workflows/ci.yml`) lints, builds and tests each ready pull request, and also builds the universal app and launches it on `main` and on request (`scripts/check.sh` runs the same locally; docs/TESTING.md); `release.yml` runs on a tag.

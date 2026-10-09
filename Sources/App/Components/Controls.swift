@@ -1,7 +1,7 @@
 // Controls.swift: the buttons and small parts used on more than one screen.
 //
 // View-local values (is the pointer over this button) use the `State` struct
-// directly, never the `@State` attribute (ADR-006).
+// directly, never the `@State` attribute.
 
 import Engine
 import SwiftUI
@@ -34,6 +34,7 @@ struct PillButtonStyle: ButtonStyle {
                 .brightness(hovering.wrappedValue && enabled ? (p.dark ? 0.06 : -0.04) : 0)
                 .opacity(enabled ? (configuration.isPressed ? 0.75 : 1) : 0.45)
                 .onHover { hovering.wrappedValue = $0 }
+                .accessibilityElement(children: .combine)
         }
     }
 }

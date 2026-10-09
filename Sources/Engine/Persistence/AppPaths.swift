@@ -1,6 +1,6 @@
 import Foundation
 
-/// Where the app keeps its own files (ADR-007). Everything lives under one
+/// Where the app keeps its own files. Everything lives under one
 /// root, `~/Library/Application Support/<App>/`; no other file builds one of
 /// these paths. Tests pass a temporary root.
 public struct AppPaths: Equatable, Sendable {

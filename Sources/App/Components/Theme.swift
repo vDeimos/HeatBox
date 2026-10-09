@@ -1,7 +1,7 @@
 // Theme.swift: every colour and text size in the app is defined here, once.
 //
 // The look follows macOS: quiet warm neutrals taken from HeatBox's artwork
-// (charcoal, cream), one accent colour, hairline separators (ADR-011).
+// (charcoal, cream), one accent colour, hairline separators.
 // There is a dark and a light set; "Match the system" picks between them.
 
 import AppKit

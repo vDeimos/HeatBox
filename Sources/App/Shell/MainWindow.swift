@@ -42,7 +42,7 @@ struct Sidebar: View {
         }
     }
 
-    /// The artwork and the name, above the screens (ADR-011).
+    /// The artwork and the name, above the screens.
     private var brand: some View {
         VStack(spacing: 6) {
             BrandArt(height: 84)

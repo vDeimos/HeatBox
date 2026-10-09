@@ -1,6 +1,6 @@
 #!/bin/bash
 # make-icon.sh: turn Resources/HeatBox/HeatBox.iconset into Resources/AppIcon.icns.
-# The iconset is the approved HeatBox tile at every size (ADR-011); its 1024
+# The iconset is the approved HeatBox tile at every size; its 1024
 # image is Resources/HeatBox/HeatBox_tile_1024.png. Needs only Apple's
 # iconutil. The result is committed, so a normal build never runs this; run
 # it after changing the artwork.

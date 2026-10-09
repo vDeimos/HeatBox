@@ -17,13 +17,13 @@ Neither source app was modified. Source commits: Phobos `cfda768`, YT-DLP Studio
 | Swift Testing, plugin path given | `swift test -Xswiftc -plugin-path -Xswiftc /Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing` | **Passes** (1 test). Wrapped as `scripts/test.sh` |
 | With Xcode | GitHub Actions `macos-latest` (Xcode 26.6, Swift 6.3.3), run 37425032893 | Lint, build, `scripts/test.sh` (plain `swift test`), universal release build and `--smoke` all pass. That runner is one Xcode release behind this Mac's SDK, so it does not show how Xcode 27 treats `@State` |
 
-Conclusion: Phobos's "`@State` does not build with the Command Line Tools" is true on the current toolchain; Studio's free use of `@State` would not build on this Mac today. Decision in ADR-006: SwiftPM, Swift Testing, and one source rule (no `@State` attribute) so the project builds with or without Xcode.
+Conclusion: Phobos's "`@State` does not build with the Command Line Tools" is true on the current toolchain; Studio's free use of `@State` would not build on this Mac today. Decision: SwiftPM, Swift Testing, and one source rule (no `@State` attribute) so the project builds with or without Xcode.
 
 "With Xcode" could not be checked locally because Xcode is not installed; CI covers it.
 
 ## (b) Universal build
 
-`swift build -c release --arch arm64 --arch x86_64` completes in about 20 s. `lipo -archs` on the product prints `x86_64 arm64`. The toolchain warns that x86_64 is deprecated for the SDK's default deployment target (noted in ADR-002). The product path comes from `--show-bin-path` because it differs between SwiftPM versions.
+`swift build -c release --arch arm64 --arch x86_64` completes in about 20 s. `lipo -archs` on the product prints `x86_64 arm64`. The toolchain warns that x86_64 is deprecated for the SDK's default deployment target (noted in the spike). The product path comes from `--show-bin-path` because it differs between SwiftPM versions.
 
 ## (c) yt-dlp and Deno
 
@@ -68,4 +68,4 @@ On this Mac: `~/Library/Application Support/Phobos` does not exist, and the only
 
 Studio keeps nothing in `Application Support`. On this Mac `com.local.ytdlpstudio.plist` holds only a window frame: no saved options or presets yet, so the importer's "nothing to import" path is the common case here.
 
-(The Windows edition's `settings.json` is out of scope per ADR-001.)
+(The Windows edition's `settings.json` is out of scope.)

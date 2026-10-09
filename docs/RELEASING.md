@@ -1,22 +1,35 @@
 # Releasing
 
-A release is a tagged commit. GitHub Actions builds, tests and packs it and attaches the result to a **draft** release; a person reads the draft and publishes it. Nothing here signs with an Apple account or publishes by itself. Releases are signed ad hoc and are **not notarised** (ADR-010; confirmed for 1.1.0 on 2026-10-09), so the release notes and the read-me must say how to approve the first opening.
+A release is a tagged commit. GitHub Actions builds, tests and packs it and attaches the result to a **draft** release; a person reads the draft and publishes it. Nothing here signs with an Apple account or publishes by itself. Releases are signed ad hoc and are **not notarised** (confirmed for 1.1.0 on 2026-10-09), so the release notes and the read-me must say how to approve the first opening.
 
 ## Steps
 
-1. **Check it works.** Go through `docs/TESTING.md` on Apple silicon and, per ADR-002, on an Intel Mac if one is available (otherwise say so in the release notes).
+1. **Check it works.** Go through `docs/TESTING.md` on Apple silicon and, on an Intel Mac if one is available (otherwise say so in the release notes).
 2. **Set the version.** `Sources/Engine/Engine.swift` (`Engine.version`) is the single source; the build reads it back. Follow semantic versioning.
 3. **Write the changelog.** In `CHANGELOG.md` rename the Unreleased heading to `## [X.Y.Z] - YYYY-MM-DD`. That text becomes the release notes.
-4. **Commit, tag, push.** A release prepared on its own branch (`heatbox/…`) is merged into `main` first, once its pull request's CI run is green; without a pull request, run CI on the branch by hand (Actions > CI > Run workflow), which also builds the universal app and checks that it launches.
+4. **Commit, tag, push.** A release prepared on its own branch (`heatbox/…`) is merged into `main` first, once its pull request's CI run is green; without a pull request, run `scripts/check.sh --full` on the branch instead; it runs the same checks as CI and also builds the universal app and checks that it launches. CI and Actions are not used while the Actions spending limit is $0.
    ```
    git commit -am "Release X.Y.Z"
    git tag vX.Y.Z
    git push origin main vX.Y.Z
    ```
-5. **Watch the Release workflow.** A tag push starts it on a GitHub-hosted macOS runner (`macos-26`), which uses paid macOS minutes. It refuses if the tag and `Engine.version` disagree or the changelog has no section for the version, runs lint and every test, and runs `scripts/package.sh`. While the account's minutes are exhausted, build the release locally instead: run `scripts/package.sh` on the tagged commit, then attach `dist/HeatBox-X.Y.Z-macos-universal.zip` and its `.sha256` to a draft release by hand (`gh release create vX.Y.Z <files> --draft --title "HeatBox X.Y.Z" --notes-file <notes> --verify-tag`).
+5. **Build the release on this Mac, not in Actions.** Pushing a tag does **not** start anything: the Release workflow is `workflow_dispatch` only, so it cannot spend the paid macOS minutes by accident. Follow "Manual release" below. (Running the workflow by hand from the Actions tab is still possible, but it bills macOS minutes; do not do it while the account's Actions spending limit is $0.)
 6. **Read the draft** on the Releases page: `HeatBox-X.Y.Z-macos-universal.zip` and its `.sha256`. Download the zip, check the checksum, open it on a clean Mac, then publish.
 
-`scripts/package.sh` can also be run by hand; it leaves the zip and checksum in `dist/`.
+## Manual release (no Actions minutes)
+
+Everything here runs on the maintainer's Mac, and nothing is published until the last step. Steps marked **(maintainer)** need the maintainer.
+
+1. **(maintainer)** Check out the tagged commit: `git switch --detach vX.Y.Z` (or the release branch's head).
+2. Run the local checks: `scripts/lint.sh` and `scripts/check.sh`. Both must pass.
+3. Build the package: `scripts/package.sh`. It leaves `dist/HeatBox-X.Y.Z-macos-universal.zip` and its `.sha256` in `dist/`.
+4. Verify it: `shasum -a 256 -c dist/HeatBox-X.Y.Z-macos-universal.zip.sha256`; `lipo -archs` on the app's executable prints `x86_64 arm64`; `codesign --verify --deep --strict` passes; `Info.plist` has version X.Y.Z and display name HeatBox.
+5. Make the release notes: `scripts/release-notes.sh X.Y.Z > dist/notes.md`.
+6. **(maintainer)** Create a **draft** release by hand, from the web UI (Releases > Draft a new release, tag `vX.Y.Z`, target the commit, attach the zip and `.sha256`, paste `dist/notes.md`, tick "Set as a pre-release" only if it is one), or with the maintainer's own gh session: `gh release create vX.Y.Z dist/HeatBox-X.Y.Z-macos-universal.zip dist/HeatBox-X.Y.Z-macos-universal.zip.sha256 --draft --title "HeatBox X.Y.Z" --notes-file dist/notes.md --verify-tag`.
+7. **(maintainer)** Read the draft, download the zip from it, check its checksum, and open it on a clean Mac (Open Anyway). Only then publish.
+
+Do not create a release, upload an asset or push a tag from a script or an assistant without the maintainer's explicit go-ahead.
+
 
 ## What is in the zip
 
@@ -26,7 +39,7 @@ The app, `Read Me First.txt`, `LICENSE.txt` and `Licences and Notices.txt` (yt-d
 
 The app asks for a notice file only if `UPDATE_NOTICE_URL` was set when it was built. Keep a small JSON file `{ "version": "X.Y.Z", "url": "<releases page>", "note": "" }` somewhere readable without signing in, and set the repository variable `UPDATE_NOTICE_URL` to its `https` address. It needs a public location; while the repository is private leave the variable unset and the app makes no check at all.
 
-## Signing (switch for later, ADR-010)
+## Signing (switch for later)
 
 Releases are ad-hoc signed. With a paid Apple Developer account: add the certificate and notarisation credentials as repository secrets, replace the `codesign --sign -` line in `scripts/build.sh` with the Developer ID identity and hardened-runtime flags, and submit the zip with `notarytool` before attaching it. Only then can a real in-app updater be considered.
 
@@ -54,7 +67,7 @@ The repository is private. 1.1.0 is prepared for a public release, and these are
 
 ## Names that stay
 
-The app is HeatBox from 1.1.0, in the repository `vDeimos/HeatBox`. The bundle identifier, the `studioxphobos://` scheme, the data folder and the `StudioXPhobos` executable are kept on purpose (ADR-011), so existing installs keep their data and their browser buttons. `studio-x-phobos.presets` inside exported preset files is a file format's name and stays too. The 1.0.0 release keeps its Studio x Phobos title and zip names as history.
+The app is HeatBox from 1.1.0, in the repository `vDeimos/HeatBox`. The bundle identifier, the `studioxphobos://` scheme, the data folder and the `StudioXPhobos` executable are kept on purpose, so existing installs keep their data and their browser buttons. `studio-x-phobos.presets` inside exported preset files is a file format's name and stays too. The 1.0.0 release keeps its Studio x Phobos title and zip names as history.
 
 ## Licences
 

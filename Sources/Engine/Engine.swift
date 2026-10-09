@@ -1,7 +1,7 @@
 import Foundation
 
 /// The product's identity. The name appears here and nowhere else in the
-/// engine, so every message, folder and link scheme follows it (ADR-004).
+/// engine, so every message, folder and link scheme follows it.
 public enum Engine {
     /// The name people see.
     public static let productName = "HeatBox"

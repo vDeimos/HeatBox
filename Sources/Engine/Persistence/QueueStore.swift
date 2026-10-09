@@ -113,7 +113,7 @@ public struct SavedJob: Codable, Equatable, Sendable {
     }
 }
 
-/// The unfinished jobs on disk (`queue.json`, ADR-007), so the queue survives
+/// The unfinished jobs on disk (`queue.json`), so the queue survives
 /// a restart. The file has a version number; an entry that cannot be read is
 /// skipped without losing the others.
 public struct QueueStore: Sendable {

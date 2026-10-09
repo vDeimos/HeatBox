@@ -1,6 +1,6 @@
 import Foundation
 
-/// New-version notices (Phobos, ADR-010): the app never updates itself; it
+/// New-version notices (Phobos): the app never updates itself; it
 /// can read one small file that names the newest version and say so.
 public enum Versioning {
     public struct Notice: Equatable, Sendable {

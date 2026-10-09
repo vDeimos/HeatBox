@@ -49,7 +49,7 @@ public struct ToolStatus: Equatable, Sendable {
 }
 
 /// Finds tools and builds the environment they run in. Lookup order
-/// (ADR-003): the user's override, the managed folder, then fixed system
+///: the user's override, the managed folder, then fixed system
 /// folders. The inherited `PATH` is never consulted, here or by the tools.
 public struct ToolRegistry: Sendable {
     /// Homebrew on Apple silicon, Homebrew on Intel, then the system's own folder.

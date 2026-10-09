@@ -34,7 +34,7 @@ The rules that matter most:
 - **A file is never overwritten or deleted.** A taken name gets a number; removal goes to the Trash.
 - **A download's command is covered by a golden fixture.** If you change what yt-dlp or FFmpeg is asked to do, re-record with `UPDATE_GOLDEN=1 scripts/test.sh` and read the diff.
 - **Tests do not contact websites** and do not depend on how fast the machine is.
-- In `Sources/App`, use `State(initialValue:)` or `@StateObject`, not the `@State` attribute: the project builds without Xcode (ADR-006).
+- In `Sources/App`, use `State(initialValue:)` or `@StateObject`, not the `@State` attribute: the project builds without Xcode.
 - Words the person reads are plain: say what happened and what to do.
 
 Keep a pull request to one change, say how you checked it, and include screenshots for anything visible. Screens are not covered by automated tests, so say which lines of the checklist in [docs/TESTING.md](docs/TESTING.md) you went through.

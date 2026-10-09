@@ -12,8 +12,8 @@
 # INSTALL_DIR=<folder> installs somewhere else and does not open the app (for
 # trying the install step out).
 # UPDATE_NOTICE_URL=https://... sets where the app looks for a notice of a
-# newer version; without it the built app never looks (ADR-010).
-# The app is signed ad hoc (ADR-010): it runs on this Mac, and macOS asks for
+# newer version; without it the built app never looks.
+# The app is signed ad hoc: it runs on this Mac, and macOS asks for
 # confirmation the first time a copy downloaded from elsewhere is opened.
 
 set -euo pipefail
@@ -36,7 +36,7 @@ done
 
 # Only the app itself is built and packaged, never the test helpers.
 PRODUCT="StudioXPhobos"
-# What the app was called in 1.0.0 (ADR-011).
+# What the app was called in 1.0.0.
 LEGACY_NAME="Studio x Phobos"
 flags=(-c release --product "$PRODUCT")
 if [ "$UNIVERSAL" -eq 1 ]; then flags+=(--arch arm64 --arch x86_64); fi
@@ -69,7 +69,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BINARY" "$APP/Contents/MacOS/$EXECUTABLE"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 cp Resources/NOTICES.txt "$APP/Contents/Resources/NOTICES.txt"
-# The approved artwork, shown inside the app (ADR-011).
+# The approved artwork, shown inside the app.
 cp Resources/HeatBox/HeatBox_art.png "$APP/Contents/Resources/HeatBoxArt.png"
 
 cat > "$APP/Contents/Info.plist" <<PLIST

@@ -17,7 +17,7 @@ public enum ToolArch: String, Sendable, CaseIterable {
     }
 }
 
-/// The tools the app installs for itself (ADR-003): what to fetch, from where,
+/// The tools the app installs for itself: what to fetch, from where,
 /// and the SHA-256 the file must have. The file is `tools.lock.json` at the
 /// repository root; `ToolLock.bundled` is the same text compiled in.
 public struct ToolLock: Codable, Equatable, Sendable {

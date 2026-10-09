@@ -1,7 +1,7 @@
 // swift-tools-version:6.0
 import PackageDescription
 
-// The product is "HeatBox" (ADR-004, ADR-011). This is the executable's name,
+// The product is "HeatBox". This is the executable's name,
 // which cannot contain spaces; the display name is `Engine.productName`.
 let productName = "StudioXPhobos"
 

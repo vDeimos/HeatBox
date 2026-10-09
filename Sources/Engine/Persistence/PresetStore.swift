@@ -1,6 +1,6 @@
 import Foundation
 
-/// The person's own presets on disk (`presets.json`, ADR-007): a version
+/// The person's own presets on disk (`presets.json`): a version
 /// number and a list. A preset that cannot be read is skipped without
 /// losing the others, and a file that cannot be read at all is set aside.
 /// Presets pass through the extra-argument check on the way in, so a

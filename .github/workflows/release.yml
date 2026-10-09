@@ -1,10 +1,13 @@
 name: Release
 
-# Pushing a tag such as v1.0.0 builds that exact commit, runs the tests,
-# packs the universal app with its checksum, and attaches both to a DRAFT
-# release. A person looks at the draft and publishes it (docs/RELEASING.md).
+# Run by hand only (Actions > Release > Run workflow). It was once started by
+# pushing a tag such as v1.0.0, which now does nothing: macOS minutes are paid
+# and a tag must not spend them by accident. It builds the commit it is run on,
+# runs the tests, packs the universal app with its checksum, and attaches both
+# to a DRAFT release. A person looks at the draft and publishes it
+# (docs/RELEASING.md, "Manual release").
 # Nothing here signs with an Apple account: signing is a switch for later
-# (ADR-010), described in docs/RELEASING.md.
+#, described in docs/RELEASING.md.
 #
 # Two jobs, so the token that can write the release is never in the job that
 # runs the tests and installs: `build` only reads the repository, and `release`
@@ -12,9 +15,7 @@ name: Release
 # so it runs on Linux, whose minutes count a tenth as much.
 
 on:
-  push:
-    tags:
-      - "v*"
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -122,7 +122,7 @@ public enum Following {
     }
 }
 
-/// The followed channels on disk (`following.json`, ADR-007).
+/// The followed channels on disk (`following.json`).
 public struct FollowStore: Sendable {
     public static let version = 1
     public let file: URL

@@ -1,12 +1,12 @@
 #!/bin/bash
-# Source rules that the compiler does not enforce (ADR-006).
+# Source rules that the compiler does not enforce.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 # The `@State` attribute does not compile with the Command Line Tools alone.
 # Use `State(initialValue:)` or `@StateObject` instead.
 if grep -rnE '@State([^A-Za-z]|$)' Sources/App | grep -vE '^[^:]+:[0-9]+:[[:space:]]*//'; then
-    echo "error: use State(initialValue:) or @StateObject instead of @State (ADR-006)" >&2
+    echo "error: use State(initialValue:) or @StateObject instead of @State" >&2
     exit 1
 fi
 # The engine decides; the app draws. Engine files never import a UI framework

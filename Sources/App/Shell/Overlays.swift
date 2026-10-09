@@ -349,7 +349,7 @@ struct Overlays: View {
 
 // MARK: - New version notice
 
-/// Says when a newer version exists (ADR-010: a notice only, the app never
+/// Says when a newer version exists (a notice only, the app never
 /// updates itself). It looks once per launch, and only when an address was
 /// set when the app was built; with none, nothing is asked of anyone.
 @MainActor
