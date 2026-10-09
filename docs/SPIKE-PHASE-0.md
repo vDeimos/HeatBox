@@ -1,6 +1,6 @@
 # Phase 0 spike report
 
-Run on 2026-10-06 on Anthony's Mac: macOS 27.0.1 (26A434), Apple silicon, Swift 6.4, **Command Line Tools only** (`xcode-select -p` is `/Library/Developer/CommandLineTools`; Xcode is not installed). Tools from Homebrew: yt-dlp 2026.08.19, Deno 2.9.7, FFmpeg and ffprobe in `/opt/homebrew/bin`.
+Run on 2026-10-06 on the maintainer's Mac: macOS 27.0.1 (26A434), Apple silicon, Swift 6.4, **Command Line Tools only** (`xcode-select -p` is `/Library/Developer/CommandLineTools`; Xcode is not installed). Tools from Homebrew: yt-dlp 2026.08.19, Deno 2.9.7, FFmpeg and ffprobe in `/opt/homebrew/bin`.
 
 Neither source app was modified. Source commits: Phobos `cfda768`, YT-DLP Studio `73ed761` (unchanged since the analysis).
 
