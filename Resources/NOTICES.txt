@@ -3,9 +3,9 @@ HeatBox: licences and notices
 
 HeatBox itself is released under the MIT licence (the LICENSE file
 that comes with it). It is by vDeimos. It draws on Phobos, also by vDeimos,
-and adapts code from YT-DLP Studio, now named Sipass, by dustalexw, used with
-his permission. That permission is recorded privately, not in this
-repository.
+and adapts code from YT-DLP Studio, now named Sipass, by dustalexw. Its
+use in HeatBox is pending the author's written permission for public release.
+This notice will be updated when that permission is confirmed.
 
 The app does not contain the programs below. On request it downloads them
 from the addresses listed in tools.lock.json, checks each against a fixed
