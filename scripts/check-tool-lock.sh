@@ -74,7 +74,7 @@ while IFS=$'\t' read -r url sha size users; do
     failures=$((failures + 1))
     continue
   fi
-  actual_size="$(stat -f %z "$file")"
+  actual_size="$(wc -c < "$file" | tr -d '[:space:]')"
   actual_sha="$(shasum -a 256 "$file" | cut -d' ' -f1)"
   rm -f "$file"
   if [ "$actual_size" != "$size" ]; then

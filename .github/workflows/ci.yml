@@ -2,26 +2,47 @@ name: CI
 
 # Actions are pinned by commit and the runner by its macOS version, so a
 # build only changes when this file does (Dependabot proposes the updates).
-# The tools the tests run come from Homebrew at whatever version it has that
-# day; the app's own copies are pinned in tools.lock.json.
+# The tools the tests run come from Homebrew as the runner image has it (no
+# auto-update); the app's own copies are pinned in tools.lock.json.
+#
+# macOS minutes on a private repository count ten times, so this runs only
+# where it tells us something (docs/TESTING.md, "CI"):
+#   - a pull request that is ready for review: lint, build and tests;
+#   - a push to main, or a manual run (Actions > CI > Run workflow, on any
+#     branch): the same, plus the universal release build and the launch check.
+# A change only to documentation runs nothing; workflows, scripts, the lock and
+# every source file still do. scripts/check.sh runs the same steps locally.
 
 on:
   push:
-    # A release is prepared on its own branch before it reaches main.
-    branches: [main, "heatbox/**"]
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - LICENSE
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - LICENSE
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   build-and-test:
+    # A draft pull request waits; marking it ready runs it.
+    if: ${{ github.event_name != 'pull_request' || !github.event.pull_request.draft }}
     runs-on: macos-26
-    timeout-minutes: 45
+    timeout-minutes: 30
+    env:
+      FULL: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Toolchain
@@ -30,6 +51,10 @@ jobs:
           swift --version
       - name: Install the tools the integration tests run
         # Real yt-dlp, FFmpeg (with ffprobe) and Deno; a missing tool fails the tests.
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_INSTALL_CLEANUP: "1"
+          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: "1"
         run: |
           brew install yt-dlp ffmpeg deno
           yt-dlp --version
@@ -41,18 +66,16 @@ jobs:
         run: swift build
       - name: Test
         run: scripts/test.sh
-      - name: Universal release build
+      - name: Build the universal app and check that it launches
+        # Assembles the .app for both chips, starts it with an empty support
+        # folder, waits for its window and its queue, and quits it.
+        if: ${{ env.FULL == 'true' }}
         run: |
-          swift build -c release --arch arm64 --arch x86_64
-          binary="$(swift build -c release --arch arm64 --arch x86_64 --show-bin-path)/StudioXPhobos"
+          scripts/build.sh --universal --check
+          binary="$(swift build -c release --product StudioXPhobos --arch arm64 --arch x86_64 --show-bin-path)/StudioXPhobos"
           lipo -archs "$binary"
           lipo -archs "$binary" | grep -q arm64
           lipo -archs "$binary" | grep -q x86_64
           "$binary" --smoke
-      - name: Build the app and check that it launches
-        # Assembles the .app, starts it with an empty support folder, waits
-        # for its window and its queue, and quits it.
-        run: |
-          scripts/build.sh --universal --check
           plutil -p "dist/HeatBox.app/Contents/Info.plist"
           codesign --verify --deep --strict --verbose "dist/HeatBox.app"

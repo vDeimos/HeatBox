@@ -14,4 +14,4 @@ Data flow of a download: Download screen (`DownloadDraft`) → `JobRequest` → 
 
 Persistence (ADR-007): versioned JSON for settings, presets, queue and following; SQLite for the Library and transcripts; all under `~/Library/Application Support/Studio x Phobos`. Tools live in its `bin/`, installed by `ToolProvisioner` from `tools.lock.json` (ADR-003).
 
-Build: `scripts/build.sh` assembles and ad-hoc signs the `.app` (ADR-010); `scripts/package.sh` packs the release zip; CI (`.github/workflows/ci.yml`) lints, builds, tests and launches the built app on every push; `release.yml` runs on a tag.
+Build: `scripts/build.sh` assembles and ad-hoc signs the `.app` (ADR-010); `scripts/package.sh` packs the release zip; CI (`.github/workflows/ci.yml`) lints, builds and tests each ready pull request, and also builds the universal app and launches it on `main` and on request (`scripts/check.sh` runs the same locally; docs/TESTING.md); `release.yml` runs on a tag.

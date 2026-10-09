@@ -3,6 +3,7 @@
 ## Automatic
 
 ```
+scripts/check.sh    run what CI runs, before pushing (--full adds the universal build and launch check, --lock the tool lock)
 scripts/lint.sh     source rules the compiler does not enforce
 scripts/test.sh     Swift Testing: unit and golden tests, then the real-tool integration tests
 scripts/build.sh --universal --check    build the .app, start it, wait for its window and queue, quit
@@ -17,7 +18,18 @@ scripts/check-tool-lock.sh              download every pinned tool and check its
 | Integration | Real yt-dlp, FFmpeg, ffprobe against generated media and a local server; a missing tool fails, never skips | `Tests/IntegrationTests` |
 | Live (opt-in) | `LIVE_TOOLS=1 scripts/test.sh --filter LiveToolInstall` installs all four tools from their real addresses and checks the pins | `Tests/IntegrationTests` |
 
-CI runs lint, build, tests, a universal release build and the launch check on every push to `main` and to a `heatbox/…` release branch, and on every pull request. A phase or release is not recorded as done until the CI run for its own commit has been read and is green. Tests must not time the machine tightly; a shared runner is slower.
+### CI
+
+macOS minutes on a private repository count ten times, so the expensive checks run on the Mac first (`scripts/check.sh`, and `--full` before merging) and CI runs only where it adds something:
+
+| When | What runs |
+| --- | --- |
+| Pull request, ready for review | Lint, build, tests (a draft runs nothing until it is marked ready) |
+| Push to `main`, or Actions > CI > Run workflow on any branch | The same, plus the universal release build and the launch check |
+| Tag `v*` | The Release workflow: lint, every test, package, draft release |
+| Mondays, and pull requests that touch the lock | The Tool lock workflow (on Linux) |
+
+A change only to documentation (`*.md`, `docs/`, `LICENSE`) starts no CI run; workflows, scripts, `tools.lock.json`, Dependabot's settings and every source file still do. A phase or release is not recorded as done until the CI run for its last code commit has been read and is green. Tests must not time the machine tightly; a shared runner is slower.
 
 ## Manual checklist (before a release)
 

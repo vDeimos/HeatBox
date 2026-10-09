@@ -7,7 +7,7 @@ A release is a tagged commit. GitHub Actions builds, tests and packs it and atta
 1. **Check it works.** Go through `docs/TESTING.md` on Apple silicon and, per ADR-002, on an Intel Mac if one is available (otherwise say so in the release notes).
 2. **Set the version.** `Sources/Engine/Engine.swift` (`Engine.version`) is the single source; the build reads it back. Follow semantic versioning.
 3. **Write the changelog.** In `CHANGELOG.md` rename the Unreleased heading to `## [X.Y.Z] - YYYY-MM-DD`. That text becomes the release notes.
-4. **Commit, tag, push.** A release prepared on its own branch (`heatbox/…`, which CI also builds on every push) is merged into `main` first, once its CI run is green.
+4. **Commit, tag, push.** A release prepared on its own branch (`heatbox/…`) is merged into `main` first, once its pull request's CI run is green; without a pull request, run CI on the branch by hand (Actions > CI > Run workflow), which also builds the universal app and checks that it launches.
    ```
    git commit -am "Release X.Y.Z"
    git tag vX.Y.Z

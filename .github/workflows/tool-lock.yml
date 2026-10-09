@@ -4,7 +4,8 @@ name: Tool lock
 # checks its size and SHA-256 (scripts/check-tool-lock.sh). The app refuses a
 # file that does not match, so if a builder moves or replaces a release,
 # "Install the Programs" stops working for everyone. A red run here says so
-# before a person finds out. It reads the lock and changes nothing.
+# before a person finds out. It reads the lock and changes nothing. It needs
+# nothing from macOS, so it runs on Linux, whose minutes count a tenth as much.
 
 on:
   schedule:
@@ -26,8 +27,8 @@ concurrency:
 
 jobs:
   check:
-    runs-on: macos-26
-    timeout-minutes: 30
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Every locked file is still there and unchanged

@@ -21,10 +21,11 @@ Say what you are trying to do rather than which control you want. The app has a 
 You need macOS 13 or later and either Xcode or Apple's Command Line Tools. The integration tests also need the real tools: `brew install yt-dlp ffmpeg deno`.
 
 ```sh
-scripts/lint.sh     # must say "lint ok"
-scripts/test.sh     # every test must pass
-scripts/build.sh --check
+scripts/check.sh          # lint, build and every test: what a pull request's CI runs
+scripts/check.sh --full   # also the universal build and the launch check
 ```
+
+Run it before pushing: CI's macOS minutes are limited, and a draft pull request runs no CI until it is marked ready.
 
 The rules that matter most:
 

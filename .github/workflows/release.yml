@@ -8,7 +8,8 @@ name: Release
 #
 # Two jobs, so the token that can write the release is never in the job that
 # runs the tests and installs: `build` only reads the repository, and `release`
-# only receives the packed files from it.
+# only receives the packed files from it. `release` needs nothing from macOS,
+# so it runs on Linux, whose minutes count a tenth as much.
 
 on:
   push:
@@ -21,7 +22,7 @@ permissions:
 jobs:
   build:
     runs-on: macos-26
-    timeout-minutes: 60
+    timeout-minutes: 35
     permissions:
       contents: read
     steps:
@@ -42,6 +43,10 @@ jobs:
           mkdir -p dist
           scripts/release-notes.sh "$VERSION" > dist/notes.md
       - name: Install the tools the integration tests run
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+          HOMEBREW_NO_INSTALL_CLEANUP: "1"
+          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: "1"
         run: brew install yt-dlp ffmpeg deno
       - name: Lint and test
         run: |
@@ -63,8 +68,8 @@ jobs:
 
   release:
     needs: build
-    runs-on: macos-26
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
       contents: write
       id-token: write
