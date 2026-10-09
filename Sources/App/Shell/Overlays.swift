@@ -312,13 +312,16 @@ private struct TourCard: View {
                         .keyboardShortcut(.cancelAction)
                         .opacity(last ? 0 : 1)
                         .accessibilityHidden(last)
+                        .accessibilityLabel("Skip")
                     Spacer()
                     if tour.step > 0 {
                         Button("Back") { tour.back() }.buttonStyle(PillButtonStyle())
+                            .accessibilityLabel("Back")
                     }
                     Button(last ? Messages.tourFinish : "Next") { tour.next() }
                         .buttonStyle(PillButtonStyle(kind: .primary))
                         .keyboardShortcut(.defaultAction)
+                        .accessibilityLabel(last ? Messages.tourFinish : "Next")
                 }
                 .padding(.top, 4)
             }
